@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /* 
+		1. входные данные = число size
+		2. выходные = массив массивов
+		3. добавлять числа в массивы:
+			количество массивов в массиве = size
+			первый массив 1*1, 1*2 и так далее до size
+			второй массив 2*2... до 2*size
+			...
+
+		*/
+
+      multiplicationTable = function (size) {
+        let arr = [];
+        for (let i = 1; i <= size; i++) {
+          arr.push(i);
+        }
+        return [
+          ...arr.map((el) => {
+            let array = [];
+            for (let j = 1; j <= size; j++) {
+              array.push(j * el);
+            }
+            return array;
+          }),
+        ];
+      };
+
+      console.log(multiplicationTable(5));
+    </script>
+  </body>
+</html>
