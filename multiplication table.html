@@ -19,21 +19,15 @@
 		*/
 
       multiplicationTable = function (size) {
-        let arr = [];
-        for (let i = 1; i <= size; i++) {
-          arr.push(i);
+        let res = [];
+        for (let i = 0; i < size; i++) {
+          res.push([]);
+          for (let j = 0; j < size; j++) {
+            res[i].push((i + 1) * (j + 1));
+          }
         }
-        return [
-          ...arr.map((el) => {
-            let array = [];
-            for (let j = 1; j <= size; j++) {
-              array.push(j * el);
-            }
-            return array;
-          }),
-        ];
+        return res;
       };
-
       console.log(multiplicationTable(5));
     </script>
   </body>
