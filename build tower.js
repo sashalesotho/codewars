@@ -1,13 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
-    <script>
-      /*
+/*
             1. входные данные - число этажей nFloors
             2. выходные - массив групп звездочек
             3. если nFloors = 1, то звездочка без пробелов
@@ -29,18 +20,15 @@
             ]
             */
 
-      function towerBuilder(nFloors) {
-        let arr = [];
-        for (let i = 1; i <= nFloors * 2; i += 2) arr.push("*".repeat(i));
-        let lenstr = nFloors * 2 - 1;
-        return arr.map(
-          (str) =>
-            `${" ".repeat((lenstr - str.length) / 2)}${str}${" ".repeat(
-              (lenstr - str.length) / 2
-            )}`
-        );
-      }
-      console.log(towerBuilder(6));
-    </script>
-  </body>
-</html>
+				function towerBuilder(nFloors) {
+					let arr = [];
+					for (let i = 1; i <= nFloors * 2; i += 2) arr.push("*".repeat(i));
+					let lenstr = nFloors * 2 - 1;
+					return arr.map(
+					  (str) =>
+						 `${" ".repeat((lenstr - str.length) / 2)}${str}${" ".repeat(
+							(lenstr - str.length) / 2
+						 )}`
+					);
+				 }
+				 console.log(towerBuilder(6));

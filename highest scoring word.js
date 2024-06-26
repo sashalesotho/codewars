@@ -1,13 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
-    <script>
-      /*
+ /*
       1. входные данные = строка
       2. выходные = строка = слово набравшее наиобольшее количество очков
       3. преобразую строку в массив
@@ -23,19 +14,17 @@
       */
 
       function high(x) {
-        let letters = "1abcdefghijklmnopqrstuvwxyz";
-        let arr = x.split(" ");
-        let res = [];
-        for (let i = 0; i < arr.length; i++) {
-          let word = arr[i];
-          let score = word.split("").reduce((score, l) => {
-            return (score += letters.indexOf(l));
-          }, 0);
-          let obj = { word, score };
-          res.push(obj);
-        }
-        return res.sort((a, b) => b.score - a.score)[0].word;
-      }
-    </script>
-  </body>
-</html>
+			let letters = "1abcdefghijklmnopqrstuvwxyz";
+			let arr = x.split(" ");
+			let res = [];
+			for (let i = 0; i < arr.length; i++) {
+			  let word = arr[i];
+			  let score = word.split("").reduce((score, l) => {
+				 return (score += letters.indexOf(l));
+			  }, 0);
+			  let obj = { word, score };
+			  res.push(obj);
+			}
+			return res.sort((a, b) => b.score - a.score)[0].word;
+		 }
+		 console.log(high('man i need a taxi up to ubud'))
