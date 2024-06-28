@@ -9,12 +9,12 @@
 
 
 function mostLikely(prob1,prob2){
-let arr1 = prob1.split(':')
-let res1 = arr1[0] / arr1[arr1.length-1]
-let arr2 = prob2.split(':')
-let res2 = arr2[0] / arr2[arr2.length-1]
-return res1 > res2
- }
+	let arr1 = prob1.split(':');
+	let res1 = arr1[0] / arr1[arr1.length-1];
+	let arr2 = prob2.split(':');
+	let res2 = arr2[0] / arr2[arr2.length-1];
+	return res1 > res2;
+}
 
- console.log(mostLikely('20:13','0:3'))
+console.log(mostLikely('20:13','0:3'));
 

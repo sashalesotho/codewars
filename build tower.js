@@ -20,15 +20,15 @@
             ]
             */
 
-				function towerBuilder(nFloors) {
-					let arr = [];
-					for (let i = 1; i <= nFloors * 2; i += 2) arr.push("*".repeat(i));
-					let lenstr = nFloors * 2 - 1;
-					return arr.map(
-					  (str) =>
-						 `${" ".repeat((lenstr - str.length) / 2)}${str}${" ".repeat(
-							(lenstr - str.length) / 2
-						 )}`
-					);
-				 }
-				 console.log(towerBuilder(6));
+function towerBuilder(nFloors) {
+	let arr = [];
+	for (let i = 1; i <= nFloors * 2; i += 2) arr.push('*'.repeat(i));
+	let lenstr = nFloors * 2 - 1;
+	return arr.map(
+		(str) =>
+			`${' '.repeat((lenstr - str.length) / 2)}${str}${' '.repeat(
+				(lenstr - str.length) / 2
+			)}`
+	);
+}
+console.log(towerBuilder(6));

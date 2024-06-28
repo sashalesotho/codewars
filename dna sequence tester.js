@@ -13,14 +13,14 @@ function checkDNA(seq1, seq2) {
 	let longestStr = [seq1, seq2].sort((a, b) => a.length - b.length)[1];
 
 	let res = shortestStr
-	  .split("")
-	  .map((el) =>
-		 el === "A" ? "T" : el === "T" ? "A" : el === "C" ? "G" : "C"
-	  );
+		.split('')
+		.map((el) =>
+			el === 'A' ? 'T' : el === 'T' ? 'A' : el === 'C' ? 'G' : 'C'
+		);
 
-	let comply = res.reverse().join("");
-	let regex = new RegExp(comply, "g");
+	let comply = res.reverse().join('');
+	let regex = new RegExp(comply, 'g');
 	return regex.test(longestStr);
- }
+}
 
- console.log(checkDNA("TAGCATCGCCAAATTATGCGTCAGTCTGCCCG", "GGGCA"));
+console.log(checkDNA('TAGCATCGCCAAATTATGCGTCAGTCTGCCCG', 'GGGCA'));

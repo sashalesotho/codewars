@@ -18,24 +18,24 @@
           (['24:00:00','24:00:00','07']), '2 days, 7 seconds');
         	*/
 
-        function totalTime(arr) {
-          let newArr = arr.map((el) => el.replace(/^0+/, "").split(":"));
-          //[['1', '20'], ['3', '10']
-          let seconds = newArr
-            .map((array) => array[array.length - 1])
-            .reduce((acc, el) => acc + +el, 0);
-          //['20', '10']
-          let minutes = newArr
-            .map((array) => array[array.length - 2])
-            .reduce((acc, el) => acc + +el, 0);
-          // ['1', '3']
-          let hours = newArr
-            .map((array) => array[array.length - 3])
-            .reduce((acc, el) => acc + +el, 0);
-          let resSec = seconds + minutes * 60 + hours * 3600;
-          let resDays = Math.trunc(resSec / 86400);
-          let resHours = Math.trunc(resSec / 3600) - resDays * 24;
-      let resMinutes = Math.trunc(resSec / 60) - resDays * 24 - resHours *
-          return resHours;
-        }
-        console.log(totalTime(["23:00:00", "24:00:00"]));
+function totalTime(arr) {
+	let newArr = arr.map((el) => el.replace(/^0+/, '').split(':'));
+	//[['1', '20'], ['3', '10']
+	let seconds = newArr
+		.map((array) => array[array.length - 1])
+		.reduce((acc, el) => acc + +el, 0);
+	//['20', '10']
+	let minutes = newArr
+		.map((array) => array[array.length - 2])
+		.reduce((acc, el) => acc + +el, 0);
+	// ['1', '3']
+	let hours = newArr
+		.map((array) => array[array.length - 3])
+		.reduce((acc, el) => acc + +el, 0);
+	let resSec = seconds + minutes * 60 + hours * 3600;
+	let resDays = Math.trunc(resSec / 86400);
+	let resHours = Math.trunc(resSec / 3600) - resDays * 24;
+	// let resMinutes = Math.trunc(resSec / 60) - resDays * 24 - resHours *
+	return resHours;
+}
+console.log(totalTime(['23:00:00', '24:00:00']));

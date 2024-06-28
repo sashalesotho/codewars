@@ -13,27 +13,26 @@
 
            */
 
-			  function validate(n) {
-				let arr = String(n).split("");
-				const arr1 = [];
-				const arr2 = [];
-				if (arr.length % 2 === 0) {
-				  for (let i = 0; i < arr.length; i += 2) {
-					 arr1.push(arr[i] * 2 <= 9 ? arr[i] * 2 : arr[i] * 2 - 9);
-				  }
-				  for (let i = 1; i < arr.length; i += 2) {
-					 arr2.push(+arr[i]);
-				  }
-				}
-				if (arr.length % 2 !== 0) {
-				  for (let i = 1; i < arr.length; i += 2) {
-					 arr1.push(arr[i] * 2 <= 9 ? arr[i] * 2 : arr[i] * 2 - 9);
-				  }
-				  for (let i = 0; i < arr.length; i += 2) {
-					 arr2.push(+arr[i]);
-				  }
-				}
-				return [...arr1, ...arr2].reduce((acc, el) => acc + el, 0) % 10 === 0;
-			 }
-	 
-			 console.log(validate(1230));
+function validate(n) {
+	let arr = String(n).split('');
+	const arr1 = [];
+	const arr2 = [];
+	if (arr.length % 2 === 0) {
+		for (let i = 0; i < arr.length; i += 2) {
+			arr1.push(arr[i] * 2 <= 9 ? arr[i] * 2 : arr[i] * 2 - 9);
+		}
+		for (let i = 1; i < arr.length; i += 2) {
+			arr2.push(+arr[i]);
+		}
+	}
+	if (arr.length % 2 !== 0) {
+		for (let i = 1; i < arr.length; i += 2) {
+			arr1.push(arr[i] * 2 <= 9 ? arr[i] * 2 : arr[i] * 2 - 9);
+		}
+		for (let i = 0; i < arr.length; i += 2) {
+			arr2.push(+arr[i]);
+		}
+	}
+	return [...arr1, ...arr2].reduce((acc, el) => acc + el, 0) % 10 === 0;
+}
+console.log(validate(1230));
