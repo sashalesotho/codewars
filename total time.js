@@ -1,8 +1,10 @@
 /*
         	1) вх данные = массив строк hh:mm:ss
         		вых данные = строка d days h hours m minutes s seconds
-        	2) переводим элементы массива в секунды:
-        		-
+        	2) каждую строку в массиве превращаем в массив вида [dd, hh, mm, ss]
+				- последний элемент массива - секунды если их больше 60 - прибавляем к mm
+				- предпоследний элемент массива (если он есть) умножаем на 60 если их больше 60 - прибавляем к часам
+				- третий с конца элемент массива 
         	3) складываем элементы массива
         	4) общие секунды переводим в дни часы минуты секунды
         	5) формируем строку
@@ -19,23 +21,9 @@
         	*/
 
 function totalTime(arr) {
-	let newArr = arr.map((el) => el.replace(/^0+/, '').split(':'));
-	//[['1', '20'], ['3', '10']
-	let seconds = newArr
-		.map((array) => array[array.length - 1])
-		.reduce((acc, el) => acc + +el, 0);
-	//['20', '10']
-	let minutes = newArr
-		.map((array) => array[array.length - 2])
-		.reduce((acc, el) => acc + +el, 0);
-	// ['1', '3']
-	let hours = newArr
-		.map((array) => array[array.length - 3])
-		.reduce((acc, el) => acc + +el, 0);
-	let resSec = seconds + minutes * 60 + hours * 3600;
-	let resDays = Math.trunc(resSec / 86400);
-	let resHours = Math.trunc(resSec / 3600) - resDays * 24;
-	// let resMinutes = Math.trunc(resSec / 60) - resDays * 24 - resHours *
-	return resHours;
+	let arrays = arr.map(str => 
+		str.split(':')
+	);
+	
 }
 console.log(totalTime(['23:00:00', '24:00:00']));
