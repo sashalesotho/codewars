@@ -2,8 +2,7 @@ function allocateRooms(customers) {
 	const rooms = [];
 	customers = customers.map((arr, idx) => ({ arrival: arr[0], departure: arr[1], num: idx, room: 0 })).sort((a, b) => a.arrival - b.arrival);
 
-	//for (let cust of customers) {
-		for (let i = 0; i < customers.length; i++) {
+	for (let i = 0; i < customers.length; i++) {
 		let freeRoomIndex = rooms.findIndex((roomEndDay) => customers[i].arrival > roomEndDay);
 		if (freeRoomIndex < 0) {
 			rooms.push(customers[i].departure);
@@ -15,7 +14,7 @@ function allocateRooms(customers) {
 	}
 	return customers.sort((a, b) => a.num - b.num).map((el) => el.room);
 }
-console.log(allocateRooms([[15,22],[2,4],[6,9],[3,33],[12,21]]))
+console.log(allocateRooms([[15, 22], [2, 4], [6, 9], [3, 33], [12, 21]]))
 
 /*
 const tests = [
